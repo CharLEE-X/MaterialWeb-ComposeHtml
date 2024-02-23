@@ -1,0 +1,22 @@
+[versions]
+compose = "1.5.12"
+kobweb = "0.16.2"
+kotlin = "1.9.22"
+materialWeb = "v1.2.0"
+nexus-publish = "2.0.0-rc-1"
+
+[libraries]
+kobweb-core = { module = "com.varabyte.kobweb:kobweb-core ", version.ref = "kobweb" }
+kobweb-silk = { module = "com.varabyte.kobweb:kobweb-silk", version.ref = "kobweb" }
+kobwebx-markdown = { module = "com.varabyte.kobwebx:kobwebx-markdown", version.ref = "kobweb" }
+silk-foundation = { module = "com.varabyte.kobweb:silk-foundation", version.ref = "kobweb" }
+silk-icons-fa = { module = "com.varabyte.kobwebx:silk-icons-fa", version.ref = "kobweb" }
+silk-icons-mdi = { module = "com.varabyte.kobwebx:silk-icons-mdi", version.ref = "kobweb" }
+
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+
+nexus-publish = { module = "io.github.gradle-nexus.publish-plugin:io.github.gradle-nexus.publish-plugin.gradle.plugin", version.ref = "nexus-publish" }
+
+[plugins]
+jetbrainsCompose = { id = "org.jetbrains.compose", version.ref = "compose" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
