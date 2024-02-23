@@ -20,5 +20,5 @@ dependencyResolutionManagement {
 rootProject.name = "MaterialWeb-ComposeHtml"
 
 include(
-    ":library",
+    ":material-web",
 )

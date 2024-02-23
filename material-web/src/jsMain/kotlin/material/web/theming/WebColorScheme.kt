@@ -1,6 +1,5 @@
 package material.web.theming
 
-import material.web.theming.MaterialTheme.colors.onTertiaryContainer
 import org.jetbrains.compose.web.css.CSSColorValue
 import org.jetbrains.compose.web.css.StyleSheet
 import org.jetbrains.compose.web.css.backgroundColor

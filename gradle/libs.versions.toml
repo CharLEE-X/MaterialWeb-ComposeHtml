@@ -1,6 +1,6 @@
 [versions]
 compose = "1.5.12"
-dokka = "1.8.20"
+dokka = "1.9.10"
 kobweb = "0.16.2"
 kotlin = "1.9.22"
 materialWeb = "v1.2.0"

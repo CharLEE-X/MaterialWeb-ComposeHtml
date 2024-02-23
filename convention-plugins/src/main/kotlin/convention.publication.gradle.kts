@@ -2,6 +2,7 @@
  * Copyright (c) 2024 Adrian Witaszak - CharLEE-X. Use of this source code is governed by the Apache 2.0 license.
  */
 
+import org.jetbrains.dokka.gradle.DokkaTask
 import java.util.Properties
 
 plugins {
@@ -47,9 +48,13 @@ val javadocJar = tasks.register<Jar>("javadocJar") {
     from(dokkaOutputDir)
 }
 
+val signingTasks = tasks.withType<Sign>()
 tasks.withType<AbstractPublishToMaven>().configureEach {
-    val signingTasks = tasks.withType<Sign>()
     dependsOn(signingTasks)
+}
+
+tasks.withType<DokkaTask>().configureEach {
+    notCompatibleWithConfigurationCache("https://github.com/Kotlin/dokka/issues/2231")
 }
 
 afterEvaluate {
@@ -65,10 +70,7 @@ afterEvaluate {
             }
         }
         publications.withType<MavenPublication> {
-            artifact(tasks.register("${name}JavadocJar", Jar::class) {
-                archiveClassifier.set("javadoc")
-                archiveAppendix.set(this@withType.name)
-            })
+            artifact(javadocJar.get())
 
             pom {
                 name.set(AppConfig.projectName)
