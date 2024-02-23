@@ -59,8 +59,8 @@ afterEvaluate {
                 name = "sonatype"
                 setUrl("https://s01.oss.sonatype.org/service/local/")
                 credentials {
-                    username = getExtraString("ossrhUsername")
-                    password = getExtraString("ossrhPassword")
+                    username = getExtraString("ossrh.username")
+                    password = getExtraString("ossrh.password")
                 }
             }
         }
