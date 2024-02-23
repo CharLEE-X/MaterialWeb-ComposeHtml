@@ -1,8 +1,11 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.jetbrainsCompose)
-    id("module.publication")
+    id("convention.publication")
 }
+
+group = "${AppConfig.groupId}.${AppConfig.artifactId}"
+version = AppConfig.version
 
 kotlin {
     applyDefaultHierarchyTemplate()
@@ -15,7 +18,6 @@ kotlin {
                 }
             }
         }
-//        binaries.executable()
     }
 
     sourceSets {

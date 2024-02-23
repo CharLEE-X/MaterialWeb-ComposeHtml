@@ -2,6 +2,10 @@ plugins {
     `kotlin-dsl`
 }
 
+repositories {
+    gradlePluginPortal()
+}
+
 dependencies {
-    implementation(libs.nexus.publish)
+    implementation(libs.dokka)
 }
