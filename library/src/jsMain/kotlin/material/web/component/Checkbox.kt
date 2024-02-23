@@ -46,10 +46,8 @@ fun Checkbox(
                 attrs?.invoke(this)
                 value?.let { attr("value", it.toString()) }
                 if (disabled) attr("disabled", "")
-                if (checked) {
-                    attr("checked", "")
-                }
-                indeterminate?.let { attr("indeterminate", "") }
+                if (checked) attr("checked", "")
+                if (indeterminate) attr("indeterminate", "")
             },
         content = content
     ).also { jsRequire("@material/web/checkbox/$tag.js") }

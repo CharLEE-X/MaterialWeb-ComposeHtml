@@ -19,11 +19,6 @@ permissions:
 
 jobs:
   build:
-    strategy:
-      matrix:
-        include:
-          - target: jsMainTest
-            os: ubuntu-latest
     runs-on: ${{ matrix.os }}
 
     steps:

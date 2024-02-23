@@ -20,6 +20,7 @@ fun ModalNavigationDrawer(
     MdTagElement(
         tagName = "md-navigation-drawer-modal",
         applyAttrs = Modifier.toAttrs {
+            attrs?.invoke(this)
             if (opened) attr("opened", "")
         },
         content = content
